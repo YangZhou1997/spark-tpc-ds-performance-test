@@ -27,11 +27,11 @@ create table web_returns_text
     wr_net_loss               double
 )
 USING csv
-OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/web_returns")
+OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/web_returns.dat")
 ;
 drop table if exists web_returns;
 create table web_returns
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from web_returns_text)
 ;
 drop table if exists web_returns_text;

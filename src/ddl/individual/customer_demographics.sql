@@ -12,11 +12,11 @@ create table customer_demographics_text
     cd_dep_college_count      int
 )
 USING csv
-OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/customer_demographics")
+OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/customer_demographics.dat")
 ;
 drop table if exists customer_demographics;
 create table customer_demographics
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from customer_demographics_text)
 ;
 drop table if exists customer_demographics_text;

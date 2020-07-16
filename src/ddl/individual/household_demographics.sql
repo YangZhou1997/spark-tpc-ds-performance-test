@@ -8,11 +8,11 @@ create table household_demographics_text
     hd_vehicle_count          int
 )
 USING csv
-OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/household_demographics")
+OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/household_demographics.dat")
 ;
 drop table if exists household_demographics;
 create table household_demographics
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from household_demographics_text)
 ;
 drop table if exists household_demographics_text;

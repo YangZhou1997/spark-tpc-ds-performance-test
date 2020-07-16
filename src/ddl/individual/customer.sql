@@ -21,11 +21,11 @@ create table customer_text
     c_last_review_date        string
 )
 USING csv
-OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/customer")
+OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/customer.dat")
 ;
 drop table if exists customer;
 create table customer
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from customer_text)
 ;
 drop table if exists customer_text;

@@ -50,7 +50,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/call_center.da
 ;
 drop table if exists call_center;
 create table call_center 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from call_center_text)
 ;
 drop table if exists call_center_text;
@@ -73,7 +73,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/catalog_page.d
 ;
 drop table if exists catalog_page;
 create table catalog_page
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from catalog_page_text)
 ;
 drop table if exists catalog_page_text;
@@ -114,7 +114,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/catalog_return
 ;
 drop table if exists catalog_returns;
 create table catalog_returns
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from catalog_returns_text)
 ;
 drop table if exists catalog_returns_text;
@@ -163,7 +163,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/catalog_sales.
 ;
 drop table if exists catalog_sales;
 create table catalog_sales
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from catalog_sales_text)
 ;
 drop table if exists catalog_sales_text;
@@ -195,7 +195,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/customer.dat")
 ;
 drop table if exists customer;
 create table customer
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from customer_text)
 ;
 drop table if exists customer_text;
@@ -223,7 +223,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/customer_addre
 ;
 drop table if exists customer_address;
 create table customer_address
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from customer_address_text)
 ;
 drop table if exists customer_address_text;
@@ -246,7 +246,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/customer_demog
 ;
 drop table if exists customer_demographics;
 create table customer_demographics
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from customer_demographics_text)
 ;
 drop table if exists customer_demographics_text;
@@ -288,7 +288,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/date_dim.dat")
 ;
 drop table if exists date_dim;
 create table date_dim
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from date_dim_text)
 ;
 drop table if exists date_dim_text;
@@ -307,7 +307,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/household_demo
 ;
 drop table if exists household_demographics;
 create table household_demographics
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from household_demographics_text)
 ;
 drop table if exists household_demographics_text;
@@ -324,7 +324,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/income_band.da
 ;
 drop table if exists income_band;
 create table income_band 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from income_band_text)
 ;
 drop table if exists income_band_text;
@@ -342,7 +342,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/inventory.dat"
 ;
 drop table if exists inventory;
 create table inventory 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from inventory_text)
 ;
 drop table if exists inventory_text;
@@ -378,7 +378,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/item.dat")
 ;
 drop table if exists item;
 create table item
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from item_text)
 ;
 drop table if exists item_text;
@@ -411,7 +411,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/promotion.dat"
 ;
 drop table if exists promotion;
 create table promotion
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from promotion_text)
 ;
 drop table if exists promotion_text;
@@ -428,7 +428,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/reason.dat")
 ;
 drop table if exists reason;
 create table reason 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from reason_text)
 ;
 drop table if exists reason_text;
@@ -448,7 +448,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/ship_mode.dat"
 ;
 drop table if exists ship_mode;
 create table ship_mode
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from ship_mode_text)
 ;
 drop table if exists ship_mode_text;
@@ -491,7 +491,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/store.dat")
 ;
 drop table if exists store;
 create table store 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from store_text)
 ;
 drop table if exists store_text;
@@ -525,7 +525,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/store_returns.
 ;
 drop table if exists store_returns;
 create table store_returns 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from store_returns_text)
 ;
 drop table if exists store_returns_text;
@@ -562,7 +562,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/store_sales.da
 ;
 drop table if exists store_sales;
 create table store_sales
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from store_sales_text)
 ;
 drop table if exists store_sales_text;
@@ -586,7 +586,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/time_dim.dat")
 ;
 drop table if exists time_dim;
 create table time_dim
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from time_dim_text)
 ;
 drop table if exists time_dim_text;
@@ -614,7 +614,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/warehouse.dat"
 ;
 drop table if exists warehouse;
 create table warehouse
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from warehouse_text)
 ;
 drop table if exists warehouse_text;
@@ -642,7 +642,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/web_page.dat")
 ;
 drop table if exists web_page;
 create table web_page 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from web_page_text)
 ;
 drop table if exists web_page_text;
@@ -680,7 +680,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/web_returns.da
 ;
 drop table if exists web_returns;
 create table web_returns
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from web_returns_text)
 ;
 drop table if exists web_returns_text;
@@ -728,7 +728,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/web_sales.dat"
 ;
 drop table if exists web_sales;
 create table web_sales
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from web_sales_text)
 ;
 drop table if exists web_sales_text;
@@ -768,7 +768,7 @@ OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/web_site.dat")
 ;
 drop table if exists web_site;
 create table web_site
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from web_site_text)
 ;
 drop table if exists web_site_text;

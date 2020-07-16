@@ -34,11 +34,11 @@ create table call_center_text
     cc_tax_percentage         double
 )
 USING csv
-OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/call_center")
+OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/call_center.dat")
 ;
 drop table if exists call_center;
 create table call_center 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from call_center_text)
 ;
 drop table if exists call_center_text;

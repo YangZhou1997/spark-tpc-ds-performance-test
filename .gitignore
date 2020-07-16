@@ -9,3 +9,8 @@ dsdgen
 dsqgen
 bin/**
 src/toolkit/*
+src/data10g/
+src/data1g/
+src/data3g/
+src/data5g/
+src/mixdata/

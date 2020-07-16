@@ -267,7 +267,7 @@ function run_subset_tpcds_queries {
     baseName="$(basename $i)"
     template $i > ${output_dir}/$baseName
   done 
-  check_prereq "2"
+#   check_prereq "2"
   result=$?
   
   NUM_QUERIES=`cat ${TPCDS_WORK_DIR}/runlist.txt | wc -l`
@@ -299,7 +299,7 @@ function run_tpcds_queries {
   done 
   # 1 add to 99 queries to signal the end of the run to progress bar
   NUM_QUERIES=100
-  check_prereq "3"
+#   check_prereq "3"
   result=$?
   if [ "$result" -ne 1 ]; then 
     logInfo "Running TPCDS queries. Will take a few hours.. "
@@ -382,6 +382,7 @@ set_env() {
   . $TPCDS_ROOT_DIR/bin/tpcdsenv.sh
   echo "SPARK_HOME is " $SPARK_HOME
   set_environment
+  echo "TPCDS_GENDATA_DIR is " $TPCDS_GENDATA_DIR
 }
 
 main() {

@@ -6,11 +6,11 @@ create table income_band_text
     ib_upper_bound            int
 )
 USING csv
-OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/income_band")
+OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/income_band.dat")
 ;
 drop table if exists income_band;
 create table income_band 
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from income_band_text)
 ;
 drop table if exists income_band_text;

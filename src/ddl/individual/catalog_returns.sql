@@ -30,11 +30,11 @@ create table catalog_returns_text
     cr_net_loss               double
 )
 USING csv
-OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/catalog_returns")
+OPTIONS(header "false", delimiter "|", path "${TPCDS_GENDATA_DIR}/catalog_returns.dat")
 ;
 drop table if exists catalog_returns;
 create table catalog_returns
-using parquet
+using ${TPCDS_FORMAT}
 as (select * from catalog_returns_text)
 ;
 drop table if exists catalog_returns_text;
