@@ -16,9 +16,9 @@ export SPARK_HOME=$SPARK_HOME
 
 export TPCDS_ROOT_DIR=
 export TPCDS_LOG_DIR=
-export TPCDS_DBNAME=
+export TPCDS_DBNAME="TPCDS10"
 export TPCDS_WORK_DIR=
-export TPCDS_GENDATA_DIR="hdfs:///tmp/tpcds3"
+export TPCDS_GENDATA_DIR="hdfs:///tmp/tpcds10"
 export TPCDS_FORMAT="parquet"
 
 export ADDITION_SPARK_OPTIONS=
