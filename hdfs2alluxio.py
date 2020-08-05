@@ -63,8 +63,11 @@ if __name__ == "__main__":
     tables = blocking_run(cmd).strip().split()[1::3]
     print(tables)
     sql = open('./log/transfer.sql', 'w')
-    for table in tables:
-        cmd = f'ALTER TABLE {table} SET LOCATION "{toStorage}/user/hive/warehouse/{database}.db/{table}";'
+    for table in tables:    
+        if toStorage == 'alluxio':
+            cmd = f'ALTER TABLE {table} SET LOCATION "{toStorage}/mnt/alluxio1/{database}.db/{table}";'
+        else:
+            cmd = f'ALTER TABLE {table} SET LOCATION "{toStorage}/user/hive/warehouse/{database}.db/{table}";'
         sql.write(cmd + '\n')
         # cmd = f'~/spark-2.4.5-bin-hadoop2.7/bin/spark-sql --database {database} -e "show partitions {table};"'
         # try:
