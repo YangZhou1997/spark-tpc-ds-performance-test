@@ -35,7 +35,9 @@ for i, split in enumerate(splits):
         df = df.withColumnRenamed(c, c.replace(' ', '_').replace(',', '_').replace(';', '_').replace('{', '_').replace('}', '_')
             .replace('(', '_').replace(')', '_').replace('\n', '_').replace('\t', '_').replace('=', '_'))
 
-    respath = 'alluxio://node0:19998/user/hive/warehouse/sqlres/' + tail.replace('sql', 'parquet')
+    # respath = 'alluxio://node0:19998/user/hive/warehouse/sqlres/' + tail.replace('sql', 'parquet')
+    respath = 'alluxio://node0:19998/mnt/alluxio1/sqlres/' + tail.replace('sql', 'parquet')
+
     if i != 0:
         respath += str(i)
 
